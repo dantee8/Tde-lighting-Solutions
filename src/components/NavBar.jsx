@@ -6,52 +6,37 @@ import { useSelector } from "react-redux";
 
 const NavBar = () => {
   const cartItems = useSelector((state) => state.cart.items);
+  const categories = useSelector((state) => state.product.products);
 
   return (
     <>
-      <header className=" flex items-center justify-between md:px-28  px-4 py-3 shadow-lg">
+      <header className=" flex items-center justify-between md:px-28  px-4 py-3 shadow-lg fixed bg-white top-0   w-full z-20">
         <Link to="/">
           <img className="lg:w-40 w-28" src={TDeLogo} alt="" />
         </Link>
         <nav className="lg:-ml-28 hidden md:flex">
-          <ul className="flex gap-5">
+          <ul className="flex gap-5 items-center">
             <li>
               <Link to="/products">All</Link>
             </li>
             <li>
               <Dropdown
                 label="Products"
-                placement="bottom"
                 inline
-                className="w-2/5 "
+                placement="bottom"
+                className="w-[60vw]"
               >
-                <div className="grid grid-cols-5 gap-2 text-nowrap">
-                  <div>
-                    <DropdownItem>Led Light</DropdownItem>
-                    <DropdownItem>Led Light</DropdownItem>
-                    <DropdownItem>Led Light</DropdownItem>
-                  </div>
-                  <div>
-                    <DropdownItem>Led Light</DropdownItem>
-                    <DropdownItem>Led Light</DropdownItem>
-                    <DropdownItem>Led Light</DropdownItem>
-                  </div>
-                  <div>
-                    <DropdownItem>Led Light</DropdownItem>
-                    <DropdownItem>Led Light</DropdownItem>
-                    <DropdownItem>Led Light</DropdownItem>
-                  </div>
-                  <div>
-                    <DropdownItem>Led Light</DropdownItem>
-                    <DropdownItem>Led Light</DropdownItem>
-                    <DropdownItem>Led Light</DropdownItem>
-                  </div>
-                  <div>
-                    <DropdownItem>Led Light</DropdownItem>
-                    <DropdownItem>Led Light</DropdownItem>
-                    <DropdownItem>Led Light</DropdownItem>
-                  </div>
-                </div>
+                {categories.map((category) => {
+                  return (
+                    <div key={category.id} className="  text-nowrap">
+                      <Link to={`/products/${category.id}`} className="">
+                        <Dropdown.Item className=" ">
+                          {category.name.slice(0, 10)}
+                        </Dropdown.Item>
+                      </Link>
+                    </div>
+                  );
+                })}
               </Dropdown>
             </li>
             <li>
@@ -80,7 +65,9 @@ const NavBar = () => {
           </div>
         </div>
       </header>
-      <Outlet />
+      <div className=" mt-20">
+        <Outlet />
+      </div>
     </>
   );
 };

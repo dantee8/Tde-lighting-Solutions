@@ -5,7 +5,7 @@ import SearchBar from "../components/SearchBar";
 const HomePage = () => {
   return (
     <div className="flex flex-col w-[100%]">
-      <main>
+      <main className="">
         <SearchBar />
         <CaruselHero />
       </main>

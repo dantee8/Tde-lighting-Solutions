@@ -65,8 +65,8 @@ const ShoppingCardPage = () => {
   });
 
   return (
-    <div className="container mx-auto mt-10">
-      <div className="sm:flex shadow-md my-10">
+    <div className="container mx-auto ">
+      <div className="sm:flex shadow-md ">
         <div className="  w-full  sm:w-3/4 bg-white px-10 py-10">
           <div className="flex justify-between border-b pb-8">
             <h1 className="font-semibold text-2xl">Shopping Cart</h1>
