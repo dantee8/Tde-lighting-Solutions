@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import RelatedProducts from "../components/RelatedProducts";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart } from "../features/cartSlice";
+import CaruselHero from "../components/CaruselHero";
 
 const ProductDetailPage = () => {
   const dispatch = useDispatch();
@@ -19,6 +20,7 @@ const ProductDetailPage = () => {
 
   return (
     <>
+      <CaruselHero />
       <div class="bg-gray-100 dark:bg-gray-800 py-8 mt-20">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex flex-col md:flex-row -mx-4">
