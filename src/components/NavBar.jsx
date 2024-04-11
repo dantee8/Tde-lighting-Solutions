@@ -8,12 +8,10 @@ import { useState } from "react";
 const NavBar = () => {
   const cartItems = useSelector((state) => state.cart.items);
   const categories = useSelector((state) => state.product.products);
-  const [menuDrop, setMenuDrop] = useState(true);
+  const [menuDrop, setMenuDrop] = useState(false);
 
   const handleMenuToggle = () => {
     setMenuDrop((prevMenu) => !prevMenu);
-
-    console.log(menuDrop);
   };
 
   return (
@@ -80,6 +78,7 @@ const NavBar = () => {
                 <li>
                   <Link>All</Link>
                 </li>
+                <hr className="w-3/4" />
                 <li>
                   <Dropdown
                     label="Products"
@@ -95,17 +94,24 @@ const NavBar = () => {
                               {category.name.slice(0, 10)}
                             </Dropdown.Item>
                           </Link>
+                          <hr className="w-3/4" />
                         </div>
                       );
                     })}
                   </Dropdown>
                 </li>
+                <hr className="w-3/4" />
+
                 <li>
                   <Link to={"/contact"}>Contact</Link>
                 </li>
+                <hr className="w-3/4" />
+
                 <li>
                   <Link>About Us</Link>
                 </li>
+                <hr className="w-3/4" />
+
                 <li className="w-3/4 mx-auto items-center text-center ">
                   <button
                     onClick={() => handleMenuToggle()}
