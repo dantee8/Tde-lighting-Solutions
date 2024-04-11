@@ -103,10 +103,17 @@ const NavBar = () => {
                 <hr className="w-3/4" />
 
                 <li>
+                  <Link to={"/contact"}>Rental</Link>
+                </li>
+                <hr className="w-3/4" />
+                <li>
+                  <Link to={"/contact"}>Projects</Link>
+                </li>
+                <hr className="w-3/4" />
+                <li>
                   <Link to={"/contact"}>Contact</Link>
                 </li>
                 <hr className="w-3/4" />
-
                 <li>
                   <Link>About Us</Link>
                 </li>
