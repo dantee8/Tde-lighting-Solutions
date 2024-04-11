@@ -33,33 +33,27 @@ const ProductDetailPage = () => {
                 />
               </div>
               <div class="flex -mx-2 mb-4 items-center">
-                <div class="w-1/2 px-2">
+                <div class="w-1/2 px-1">
                   <button
                     onClick={() => dispatch(addToCart(product))}
-                    class="w-full text-sm bg-gray-900 dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700"
+                    class="w-full text-xs bg-gray-900 dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700"
                   >
                     Add to Cart
                   </button>
                 </div>
-                <div class="w-1/2 px-2 ">
-                  <button class="w-full text-sm bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white text-nowrap py-2  rounded-full font-bold hover:bg-gray-300 dark:hover:bg-gray-600">
+                <div class="w-1/2 px-1 ">
+                  <button class="w-full text-xs bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white text-nowrap py-2   rounded-full font-bold hover:bg-gray-300 dark:hover:bg-gray-600">
                     Add to Wishlist
                   </button>
                 </div>
               </div>
             </div>
             <div class="md:flex-1 px-4">
-              <h2 class="md:text-2xl text-xl font-bold text-gray-800 dark:text-white mb-2">
+              <h2 class="md:text-2xl text-xl font-bold text-blue-800 dark:text-white mb-2">
                 {product.name}
               </h2>
               <p class="text-gray-600 dark:text-gray-300 text-sm mb-4"></p>
               <div class="flex mb-4 text-sm md:text-lg">
-                <div class="mr-4">
-                  <span class="font-bold text-gray-700 dark:text-gray-300">
-                    Price:
-                  </span>
-                  <span class="text-gray-600 dark:text-gray-300">$29.99</span>
-                </div>
                 <div>
                   <span class="font-bold text-gray-700 dark:text-gray-300">
                     Availability:

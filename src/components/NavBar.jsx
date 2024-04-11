@@ -1,12 +1,20 @@
 import { Link, Outlet } from "react-router-dom";
 import { FaShoppingBag } from "react-icons/fa";
 import TDeLogo from "../assets/TDe-logo.png";
-import { Dropdown, DropdownItem } from "flowbite-react";
+import { Dropdown } from "flowbite-react";
 import { useSelector } from "react-redux";
+import { useState } from "react";
 
 const NavBar = () => {
   const cartItems = useSelector((state) => state.cart.items);
   const categories = useSelector((state) => state.product.products);
+  const [menuDrop, setMenuDrop] = useState(true);
+
+  const handleMenuToggle = () => {
+    setMenuDrop((prevMenu) => !prevMenu);
+
+    console.log(menuDrop);
+  };
 
   return (
     <>
@@ -58,11 +66,57 @@ const NavBar = () => {
               </span>
             )}
           </Link>
-          <div className="md:hidden flex flex-col ml-10 gap-1">
+          <div
+            onClick={() => handleMenuToggle()}
+            className="md:hidden flex flex-col ml-10 gap-1 relative cursor-pointer "
+          >
             <span className="w-4 h-[1px] border-black border-[1px]"></span>
             <span className="w-4 h-[1px]  border-black border-[1px]"></span>
             <span className="w-4 h-[1px]  border-black border-[1px]"></span>
           </div>
+          {menuDrop && (
+            <div className=" absolute  top-16 shadow-lg right-2 border-[1px]  bg-white z-20  w-[200px] h-[200px] rounded flex">
+              <ul className="flex flex-col w-full justify-between ml-4 items-start my-3">
+                <li>
+                  <Link>All</Link>
+                </li>
+                <li>
+                  <Dropdown
+                    label="Products"
+                    inline
+                    placement="bottom"
+                    className="w-[60vw]"
+                  >
+                    {categories.map((category) => {
+                      return (
+                        <div key={category.id} className="  text-nowrap">
+                          <Link to={`/products/${category.id}`} className="">
+                            <Dropdown.Item className=" ">
+                              {category.name.slice(0, 10)}
+                            </Dropdown.Item>
+                          </Link>
+                        </div>
+                      );
+                    })}
+                  </Dropdown>
+                </li>
+                <li>
+                  <Link to={"/contact"}>Contact</Link>
+                </li>
+                <li>
+                  <Link>About Us</Link>
+                </li>
+                <li className="w-3/4 mx-auto items-center text-center ">
+                  <button
+                    onClick={() => handleMenuToggle()}
+                    className="border-2 bg-teal-200 hover:bg-teal-500 py-1 w-full  text-sm rounded-full px-5 "
+                  >
+                    Close
+                  </button>
+                </li>
+              </ul>
+            </div>
+          )}
         </div>
       </header>
       <div className=" mt-20">
