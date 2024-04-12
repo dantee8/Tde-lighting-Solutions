@@ -73,8 +73,8 @@ const NavBar = () => {
             <span className="w-4 h-[1px]  border-black border-[1px]"></span>
           </div>
           {menuDrop && (
-            <div className=" absolute  top-16 shadow-lg right-2 border-[1px]  bg-white z-20  w-[200px] h-[200px] rounded flex">
-              <ul className="flex flex-col w-full justify-between ml-4 items-start my-3">
+            <div className=" absolute  top-16 shadow-lg right-2 border-[1px]  bg-white z-20  w-[300px] h-[340px]  rounded flex">
+              <ul className="flex flex-col w-full justify-between ml-4 items-start my-2 ">
                 <li>
                   <Link>All</Link>
                 </li>
@@ -122,7 +122,7 @@ const NavBar = () => {
                 <li className="w-3/4 mx-auto items-center text-center ">
                   <button
                     onClick={() => handleMenuToggle()}
-                    className="border-2 bg-teal-200 hover:bg-teal-500 py-1 w-full  text-sm rounded-full px-5 "
+                    className="border-2 bg-teal-200 mb-2 hover:bg-teal-500 py-1 w-full  text-sm rounded-full px-5 "
                   >
                     Close
                   </button>
