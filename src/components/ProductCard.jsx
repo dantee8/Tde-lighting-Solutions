@@ -7,7 +7,7 @@ import {
   handleQuantityIncrement,
 } from "../features/productSlice";
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, isGrid }) => {
   const { id, name, desc, quantity, img } = product;
   const dispatch = useDispatch();
 
@@ -21,10 +21,24 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="border-[3px] h-[450px] md:h-[420px]  pb-3 rounded-lg hover:shadow-2xl hover:cursor-pointer">
+    <div
+      className={
+        isGrid
+          ? "border-[3px]  h-[450px] md:h-[520px]  pb-3 rounded-lg hover:shadow-2xl hover:cursor-pointer"
+          : "flex items-center border-2 gap-4 justify-between rounded-lg shadow-lg mt-4"
+      }
+    >
       <div className="h-2/5 ">
         <Link to={`/products/${id}`}>
-          <img className="object-contain w-full h-full" src={img} alt="" />
+          <img
+            className={
+              isGrid
+                ? '"object-contain w-full h-full" '
+                : "object-contain w-28 h-full"
+            }
+            src={img}
+            alt=""
+          />
         </Link>
       </div>
       <div className="h-2/5 flex flex-col ">
