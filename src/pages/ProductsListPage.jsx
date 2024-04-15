@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import CaruselHero from "../components/CaruselHero";
 import ProductCard from "../components/ProductCard";
 import { useSelector } from "react-redux";
+import { IoGridOutline } from "react-icons/io5";
+import { IoIosList } from "react-icons/io";
 
 const ProductsListPage = () => {
   const products = useSelector((state) => state.product.products);
@@ -16,11 +18,11 @@ const ProductsListPage = () => {
       <CaruselHero />
       <div className="flex mt-10   justify-between">
         <div className="flex gap-4 items-center">
-          <div className="cursopr-pointer" onClick={handleGridStyle}>
-            GRID
+          <div className="cursor-pointer" onClick={handleGridStyle}>
+            <IoGridOutline />
           </div>
           <div className="cursor-pointer" onClick={handleGridStyle}>
-            LIST
+            <IoIosList />
           </div>
         </div>
 
