@@ -9,6 +9,8 @@ import ContactPage from "./pages/ContactPage.jsx";
 import ProductsListPage from "./pages/ProductsListPage.jsx";
 import ProductDetailPage from "./pages/ProductDetailPage.jsx";
 import ShoppingCardPage from "./pages/ShoppingCardPage.jsx";
+import RentalPage from "./pages/RentalPage.jsx";
+import ProjectsPage from "./pages/ProjectsPage.jsx";
 import { Provider } from "react-redux";
 import store from "./store/store.js";
 const router = createBrowserRouter([
@@ -24,6 +26,8 @@ const router = createBrowserRouter([
       },
       { path: "products/:productId", element: <ProductDetailPage /> },
       { path: "/shopping-cart", element: <ShoppingCardPage /> },
+      { path: "/rental", element: <RentalPage /> },
+      { path: "/projects", element: <ProjectsPage /> },
     ],
   },
 ]);

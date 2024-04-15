@@ -15,7 +15,11 @@ const ProductDetailPage = () => {
   const product = productsI.find((item) => item.id === parsedId);
   console.log(product);
   if (!product) {
-    return <div>Loading ....</div>;
+    return (
+      <div className="w-full m-auto text-3xl font-bold flex justify-center items-center ">
+        Loading ....
+      </div>
+    );
   }
 
   return (
