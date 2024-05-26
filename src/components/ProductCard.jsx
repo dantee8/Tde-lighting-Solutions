@@ -13,7 +13,6 @@ const ProductCard = ({ product, isGrid }) => {
 
   const incrementQuantity = () => {
     dispatch(handleQuantityIncrement({ productId: id }));
-    console.log();
   };
 
   const decrementQuantity = () => {
@@ -24,53 +23,53 @@ const ProductCard = ({ product, isGrid }) => {
     <div
       className={
         isGrid
-          ? "border-[3px]  h-[450px] md:h-[520px]  pb-3 rounded-lg hover:shadow-2xl hover:cursor-pointer"
-          : "flex items-center border-2 gap-4 justify-between rounded-lg shadow-lg mt-4"
+          ? "border-2  my-10 rounded-lg shadow-sm hover:shadow-2xl flex flex-col justify-between"
+          : "border-2 my-10 rounded-lg shadow-sm flex items-center justify-between"
       }
     >
-      <div className="h-2/5 ">
+      <div className="image overflow-hidden">
         <Link to={`/products/${id}`}>
           <img
             className={
               isGrid
-                ? '"object-contain w-full h-full" '
-                : "object-contain w-28 h-full"
+                ? "overflow-hidden md:w-32 md:h-32 mx-auto w-20 h-20 object-contain"
+                : "overflow-hidden w-20 h-20 mx-auto object-contain "
             }
             src={img}
             alt=""
           />
         </Link>
       </div>
-      <div className="h-2/5 flex flex-col ">
-        <h2 className="text-center     md:text-lg md:mx-2 my-4 text-blue-500 font-semibold">
+      <div className="name and desc ">
+        <h2 className="text-blue-600 font-bold text-sm md:text-lg text-center mb-2">
           {name}
         </h2>
-        <div className="mx-2.5 ">
+        <div className="mx-2 text-sm font-extralight text-gray-600">
           <span>
             Description:
             <p className="md:text-sm">{`${desc.slice(0, 28)}...`}</p>
           </span>
         </div>
       </div>
-      <div className="h-1/5 border-blue-600 grid gap-3 p-2 items-center">
-        <div className="flex justify-center items-center ">
+      <div className="p-2  ">
+        <div className="flex items-center my-4  justify-center">
           <Button
+            className="w-5 h-5 items-center rounded-full"
             onClick={decrementQuantity}
-            className="flex w-5 h-5 items-center justify-center rounded-full"
           >
             -
           </Button>
-          <p className="mx-4">Quantity: {quantity}</p>
+          <p className="mx-4 text-nowrap">Quantity: {quantity}</p>
           <Button
+            className="w-5 h-5 items-center rounded-full"
             onClick={incrementQuantity}
-            className="flex w-5 h-5 items-center justify-center rounded-full"
           >
             +
           </Button>
         </div>
         <Button
+          className=" w-full items-center rounded-full"
           onClick={() => dispatch(addToCart(product))}
-          className="rounded-full"
         >
           Add to Cart
         </Button>

@@ -16,7 +16,7 @@ const CaruselHero = () => {
         leftControl={<MdKeyboardArrowLeft className="w-10 h-10" />}
         rightControl={<MdKeyboardArrowRight className="w-10 h-10" />}
         pauseOnHover
-        slideInterval={7000}
+        slideInterval={1000}
       >
         {bannerImages.map((banner) => {
           return (

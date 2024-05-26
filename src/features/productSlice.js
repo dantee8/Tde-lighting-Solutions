@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { products } from "../data";
 
 const initialState = {
-  products: products, // Assuming products is an array of products
+  products: products, 
 };
 
 const productSlice = createSlice({
@@ -13,7 +13,8 @@ const productSlice = createSlice({
       const { productId } = action.payload;
       const productToUpdate = state.products.find(
         (product) => product.id === productId
-      );
+      )
+
       if (productToUpdate) {
         state.products = state.products.map((product) =>
           product.id === productId

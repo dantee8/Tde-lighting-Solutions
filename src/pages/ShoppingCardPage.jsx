@@ -26,6 +26,7 @@ const ShoppingCardPage = () => {
             className="h-full object-center object-cover md:block hidden"
           />
         </div>
+
         <div className="md:pl-3 md:w-8/12 2xl:w-3/4 flex flex-col justify-center">
           <div className="flex items-center justify-between w-full">
             <p className="text-base font-black leading-none text-gray-800">

@@ -8,7 +8,7 @@ import NavMenu from "./NavMenu";
 const NavBar = () => {
   const cartItems = useSelector((state) => state.cart.items);
   const categories = useSelector((state) => state.product.products);
-  const [menuDrop, setMenuDrop] = useState(true);
+  const [menuDrop, setMenuDrop] = useState(false);
 
   const handleMenuToggle = () => {
     setMenuDrop((prevMenu) => !prevMenu);
@@ -40,7 +40,7 @@ const NavBar = () => {
           </Link>
           <div
             onClick={() => handleMenuToggle()}
-            className="md:hidden flex flex-col ml-10 gap-1 relative cursor-pointer "
+            className="md:hidden  flex flex-col ml-10 gap-1 relative cursor-pointer "
           >
             <span className="w-4 h-[1px] border-black border-[1px]"></span>
             <span className="w-4 h-[1px]  border-black border-[1px]"></span>

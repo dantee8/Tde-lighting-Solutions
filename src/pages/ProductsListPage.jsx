@@ -18,17 +18,17 @@ const ProductsListPage = () => {
       <CaruselHero />
       <div className="flex mt-10   justify-between">
         <div className="flex gap-4 items-center">
-          <div className="cursor-pointer" onClick={handleGridStyle}>
-            <IoGridOutline />
+          <div className="cursor-pointer w-5 h-5" onClick={handleGridStyle}>
+            <IoGridOutline className="w-4 h-4" />
           </div>
-          <div className="cursor-pointer" onClick={handleGridStyle}>
-            <IoIosList />
+          <div className="cursor-pointer w-6 h-6" onClick={handleGridStyle}>
+            <IoIosList className="h-5 w-5 " />
           </div>
         </div>
 
         <div className="flex items-center gap-3">
           <p>Sort by </p>
-          <select name="" id="">
+          <select className="rounded-lg text-sm p-2" name="" id="">
             <option value="">Name(A-Z)</option>
             <option value="">Name(Z-A)</option>
             <option value="">Price(low-High)</option>
